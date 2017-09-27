@@ -1,15 +1,11 @@
-var webpack = require('webpack');
-var webpackDevServer = require('webpack-dev-server');
 var path = require('path');
 
 module.exports = {
 	// context:__dirname + '/src',
-	entry:{
-		"webpack-dev-server/client?http://localhost:8080/",
-		"./src/js/index.js"
-	},
+	entry:"./src/js/index.js",
 	output:{
-		path:path.resolve(__dirname , "src"),
+		path:path.resolve(__dirname , "dist"),
+		publicPath:"/assets/",
 		filename:"bundle.js"
 	},
 	module:{
@@ -23,9 +19,5 @@ module.exports = {
 				}
 			}
 		]
-	},
-	devServer:{
-		inline:true,
-        contentBase:'./src'
-    }
+	}
 }
